@@ -18,7 +18,7 @@ describe("Person Component", () => {
     it("should create the person provider", () => {
         expect(personProvider).toBeTruthy();
         expect(personProvider instanceof PersonProvider).toEqual(true);
-    );
+    });
 
     it('doassessment should be defined', () => {
         spyOn(personProvider, 'doAssessment');
