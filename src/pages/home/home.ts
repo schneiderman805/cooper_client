@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { PersonProvider } from '../../providers/person/person';
 
 @Component({
   selector: 'page-home',
@@ -8,11 +9,18 @@ import { NavController } from 'ionic-angular';
 export class HomePage {
   user: any = {};
 
-  constructor(public navCtrl: NavController) {
-    this.user = { distance: 1000, age: 20 };
-  }
-
+  constructor(public navCtrl: NavController,
+    public person: PersonProvider
+    ) {
+    this.user = { distance: 1000, age: 20, gender: 'female' };
+    }
+    
   calculate() {
-    console.log(this.user);
+    this.person.age = this.user.age;
+    this.person.gender = this.user.gender;
+
+    this.person.doAssessment(this.user.distance);
+    console.log(this.person.assessmentMessage);
+  
   }
 }
