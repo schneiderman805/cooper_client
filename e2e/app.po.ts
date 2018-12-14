@@ -11,14 +11,14 @@ export class Page {
   }
 
  getPageOneTitleText() {
-    return element(by.tagName('page-one')).element(by.tagName('ion-title')).getText();
+    return element(by.tagName('h1')).getText();
   }
 
   fillInForm(distance, gender, age) {
 
-    element(by.css('.text-input')).clear().then(() => {  
-        element(by.css('.text-input')).sendKeys(distance); 
-    }) 
+    //element(by.css('.text-input')).clear().then(() => {  
+    //element(by.css('.text-input')).sendKeys(distance); 
+    // }) 
 
     element(by.css('.select')).click().then(() => {  
         browser.sleep(500); 

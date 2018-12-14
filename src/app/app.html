@@ -10,8 +10,18 @@
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
       </button>
+      <button ion-item (click)='signUpPopUp()' *ngIf='!currentUser'>
+        Sign Up
+      </button>
+      <button ion-item (click)='loginPopUp()' *ngIf='!currentUser'>
+        Login
+      </button>
+      <button ion-item (click)='logout()' *ngIf='currentUser'>
+        Logout {{currentUser.email}}
+      </button>
     </ion-list>
   </ion-content>
+  
 
 </ion-menu>
 
